@@ -1,0 +1,35 @@
+# Data Types and variables
+# Inputs and Outputs 
+# Statements (nested)
+# Loops
+# Lists and how to work with them 
+# Strings 
+# File Handling 
+# Operators 
+# Modular Programming 
+# Error handling 
+# Global n Local variables 
+# OOP
+    - creating classes 
+    - Inheritance
+    - Overloading methods
+    - Static and class methods 
+    - Private and public classes 
+
+📘 Intermediate Python 📘
+# Optional Parameters
+# Static and Class Methods
+# Map Function
+# Filter Function
+# Lambda Function
+# Introduction to Collections
+# Named Tuple
+# Deque
+
+📙 Advanced Python 📙
+# Overview of Python
+# Dunder/Magic Methods
+# Metaclasses
+# Decorators
+# Generators
+# Context Managers
