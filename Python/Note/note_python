@@ -1,31 +1,121 @@
 # Data Types and variables (Assigning)
+    -> Data Types
+            int = 0 , 1, ... numbers
+            string = "string",'one',"1"
+            bool = true or false
+            float = 0.1, 0.4, ... n.numbers
+
+    -> variables
+            name = "name"
+            print (name)
+            or
+            print ("your name is" + str(name))
+
     -> initializing variable directly
-        a = 5
-        
-        # printing value of a
-        print ("The value of a is: " + str(a))
+            a = 5
+            
+            # printing value of a
+            print ("The value of a is: " + str(a))
 
     -> Initializing variables using Conditional Operator
-        a = 1 if 20 > 10 else 0
-        
-        # Printing value of a
-        print("The value of a is: " , str(a))
-
+            a = 1 if 20 > 10 else 0
+            
+            # Printing value of a
+            print("The value of a is: " , str(a))
 
 # Inputs and Outputs 
     ->  input ( prompt )
         print(output)
+        or
+        print("Whats your name? ")
+        name = input()
+        print("hi", name)
 
         val = input("What is your name? ") // input
-        print ("Your Name is cool "+(val)) // output
+        print ("Your Name is cool "+ str(val)) // output
 
+
+        NOTE:
+            input() converts the input into a string so to convert to a int
+                x = input("Enter Number One: ")
+                y = input("Enter Number Two: ")          
+
+                print("Type of x:" ,type(x))
+                x = int(x) 
+                y = int(y)    
+
+                z = x + y
+
+                print("Type of x:" ,type(x))      
+                print ("Sum: " , z)
+
+# Operators 
+        +
+        -
+        *
+        /
+        ** -> exponential
+        // -> integer division 64 // 10 = 6
+        % -> reminder 64 // 10 = 4
+
+# Statements (nested & chain)
+    Conditions 
+        -> (>, >=, <, <=, ==, !=)
+
+    -> if
+        if condition:
+            statement1
+        statement2
+
+        # Here if the condition is true, if block 
+        # will consider only statement1 to be inside 
+        # its block.
+
+
+    -> if-else
+        if (condition):
+            # Executes this block if
+            # condition is true
+        else:
+            # Executes this block if
+            # condition is false
         
-# Statements (nested)
+    -> if-elif-else ladder
+        if (condition):
+            statement
+        elif (condition):
+            statement
+        .
+        .
+        else:
+            statement
+
+            example::
+                    height = input("Enter Your Height pls (meters 1.00 format): ")
+                    x = float(height)
+
+                    if x >= 1.88:
+                        print("Sorry your too tall. good for the ladies tho")
+                    elif x >= 1.55 and x <= 1.87:
+                        print ("Have a great time.")
+                    elif x > 0 and x <= 1.54:
+                        print("Sorry to short. maybe read those books")
+                    else:
+                        print("No service")
+    -> or, and, not
+
 # Loops
+    -> For Loops
+    
+    -> While Loops
+
+
+
+
 # Lists and how to work with them 
 # Strings 
 # File Handling 
-# Operators 
+
 # Modular Programming 
 # Error handling 
 # Global n Local variables 
