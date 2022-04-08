@@ -1,4 +1,11 @@
-# Data Types and variables
+# Data Types and variables (Assigning)
+    # initializing variable directly
+        a = 5
+        
+        # printing value of a
+        print ("The value of a is: " + str(a))
+
+
 # Inputs and Outputs 
 # Statements (nested)
 # Loops
