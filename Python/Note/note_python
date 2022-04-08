@@ -58,7 +58,7 @@
         // -> integer division 64 // 10 = 6
         % -> reminder 64 // 10 = 4
 
-# Statements (nested & chain)
+# Flow (nested & chain)
     Conditions 
         -> (>, >=, <, <=, ==, !=)
 
@@ -106,7 +106,15 @@
 
 # Loops
     -> For Loops
-    
+        for x in range(start, stop, step): -> start, condition, update
+            print(x)
+        NOTE: 
+            by default the range can take a single number and tha will be the 
+            STOP condition the START will be 0 and the STEP will be 1
+        
+                -> For Loop using List, Dictionary, String
+                        List For Loop
+
     -> While Loops
 
 
@@ -119,6 +127,8 @@
 # Modular Programming 
 # Error handling 
 # Global n Local variables 
+
+📘 Intermediate Python 📘
 # OOP
     - creating classes 
     - Inheritance
@@ -126,7 +136,6 @@
     - Static and class methods 
     - Private and public classes 
 
-📘 Intermediate Python 📘
 # Optional Parameters
 # Static and Class Methods
 # Map Function
