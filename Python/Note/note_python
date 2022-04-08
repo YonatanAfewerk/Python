@@ -1,12 +1,25 @@
 # Data Types and variables (Assigning)
-    # initializing variable directly
+    -> initializing variable directly
         a = 5
         
         # printing value of a
         print ("The value of a is: " + str(a))
 
+    -> Initializing variables using Conditional Operator
+        a = 1 if 20 > 10 else 0
+        
+        # Printing value of a
+        print("The value of a is: " , str(a))
+
 
 # Inputs and Outputs 
+    ->  input ( prompt )
+        print(output)
+
+        val = input("What is your name? ") // input
+        print ("Your Name is cool "+(val)) // output
+
+        
 # Statements (nested)
 # Loops
 # Lists and how to work with them 
