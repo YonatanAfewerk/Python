@@ -56,7 +56,7 @@
         /
         ** -> exponential
         // -> integer division 64 // 10 = 6
-        % -> reminder 64 // 10 = 4
+        %  -> reminder 64 // 10 = 4
 
 # Flow (nested & chain)
     Conditions 
@@ -106,6 +106,12 @@
 
 # Loops
     -> For Loops
+        Note: In Python, for loops only implements the collection-based iteration.    
+        
+        for <variable> in range(start,stop,step):
+            <expression>
+            <expression>
+            
         for x in range(start, stop, step): -> start, condition, update
             print(x)
         NOTE: 
@@ -140,6 +146,68 @@
                                 print("% s % d" % (i, d[i]))
 
     -> While Loops
+
+            while expression:
+                statement(s)
+
+        Example
+
+            count = 0
+            while (count < 3):
+                count = count + 1
+                print("Hello Man")
+
+        # Single statement while block
+            count = 0
+            while (count < 5): count += 1; print("Hello Man")
+
+        -> While loop with else
+
+            # while-else loop
+                i = 0
+                while i < 4:
+                    i += 1
+                    print(i)
+                else:  # Executed because no break in for
+                    print("No Break\n")
+                
+                i = 0
+                while i < 4:
+                    i += 1
+                    print(i)
+                    break
+                else:  # Not executed as there is a break
+                    print("No Break")
+
+
+
+
+
+    -> ## Loop Control Statements
+
+        Continue Statement
+            Note: Python Continue Statement returns the control to the beginning 
+                  of the loop.
+
+                Example
+                    # Prints all letters except 'e' and 's'
+                        i = 0
+                        a = 'Yonatanafewerk's'
+                        
+                        while i < len(a):
+                            if a[i] == 'e' or a[i] == 's':
+                                i += 1
+                                continue
+                                
+                            print('Current Letter :', a[i])
+                            i += 1
+
+        Break Statement
+            Note: Python Break Statement brings control out of the loop.
+
+        Pass Statement
+            Note: Pass is also used for empty control statements, 
+                  functions, and classes.
 
 
 # Lists and how to work with them 
