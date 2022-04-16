@@ -3,8 +3,15 @@
             int = 0 , 1, ... numbers
             string = "string",'one',"1"
             bool = true or false
-            float = 0.1, 0.4, ... n.numbers
+            float = 0.1, 0.4, ... n.numbers  
 
+        Types Data in Python 
+            - numbers
+            - Strings
+            - tuple 
+            - list
+            - Dictionary
+            
     -> variables
             name = "name"
             print (name)
@@ -209,14 +216,35 @@
             Note: Pass is also used for empty control statements, 
                   functions, and classes.
 
-
 # Lists and how to work with them 
+
 # Strings 
+
+        String formatting 
+            num = 6
+            str = "i have {} Books!" . format(num)
+            print(str)
+            
+        common string Operators (For a = hello and b = world)
+            concatenation       a + b
+            Repetition          a*amount_in_number
+            slice               a[1] -> e
+            Range Slice         b[1:3] -> takes the cha from index value 1 - 3
+            Membership          [r]
+
 # File Handling 
 
 # Modular Programming 
+
 # Error handling 
+
 # Global n Local variables 
+
+
+
+
+
+
 
 📘 Intermediate Python 📘
 # OOP
