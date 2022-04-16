@@ -1,0 +1,135 @@
+#   1. Prompt the user for two numbers A & B, computes and displays C=A/B. If the number B is zero, displays a
+       
+#   2. Write a program that reads two integers (in any order) and then print either “multiple” or “not “according to
+  
+
+#   3. Write a program that reads two integers (in any order) and then print either “multiple” or “not” according to
+    weather one of the integer is multiple of other.
+          
+#   4. Write a program that takes two numbers from user and determines that first number is a factor of second
+    number
+     
+#   5. Write a program that mimics a calculator. The program should take as input two integers and the operation
+    to be performed. It should then output the numbers, the operator, and the result. (For division, if the
+    denominator is zero, output an appropriate message.) Use 1 for Addition, 2 for Subtraction, 3 for Multiplication,
+    and 4 for Division.
+
+#   6. Write a program that calculate the real roots of a quadratic equation and displays the result.
+        
+#   7. Write a program to display the first 100 odd numbers
+          
+#   8. Write for, do-while, and while statements to compute the following sums and products.
+           
+#   9. A prime number is an integer greater than one and divisible only by itself and one. The first seven prime
+    numbers are 2, 3, 5, 7, 11, 13, and 17. Write a program that displays all the prime numbers between 1 and 100. 
+    
+#   10. Write a C++ program that counts the number of digits in an integer number. For example; 23,498 has five
+    digits
+    
+       
+#   11. Write a C++ application that can compute the letter grade of a student after accepting the student’s mid and
+        final mark. The program should only accept mid result [0-40] and final [0- 60]. If the data entered violates this
+        rule, the program should display that the user should enter the mark in the specified range. The program is also
+        expected to run until the user refuses to continue. 
+
+#   12. Write a C++ program that accepts a positive number from the user and displays the factorial of that number.
+    Use for loops to find the factorial of the number. 
+   
+#   13. write a program in C++ to read a number n and a single digit d. The program then determines whether the
+        digit presents in the number or not. If it presents the program should determine how many times it appear and
+        the position of the digit in the number 
+
+#   14. Using the ASCII table numbers, write a program to print the following output, using a nested for loop. (Hint:
+        the outer loop should loop from 1 to 5, and the inner loop’s start variable should be 65, the value of ASCII “A”). 
+   
+#   15. Write a C++ program that will print the following shapes  
+        A.
+        *
+        **
+        ***
+        ****
+        *****
+
+        solution for A
+
+        
+
+        B.
+        *****
+        ****
+        ***
+        **
+        *
+
+        Solution for B
+
+        
+
+        D.
+        *
+        **
+        ****
+        *****
+        ****
+        **
+        *
+
+        Solution for C
+
+       
+
+        d. cool thing
+ 
+#   16. A program to generate Fibonacci series. The first two digits in the series are 0 and 1 and the rest is 
+        computed by adding the preceding two digits. (i.e. 0 1 2 3 5 8 13 . . .) 
+      
+#   17. Write a program that accepts a number from the key board and reverses the digits of a given number. 
+        write a program that generates the following series of numbers 
+        a.
+        1
+        12
+        123
+        1234
+        12345
+        123456
+        1234567
+
+        Solution for a
+       
+        
+
+        b.
+        1
+        21
+        321
+        4321
+        54321
+        654321
+        7654321
+
+       
+
+        c.
+        987654321
+        87654321
+        7654321
+        654321
+        54321
+        4321
+        321
+        21
+        1
+
+   
+
+
+#   18. Use either a switch or an if-else statement and display whether a vowel or a consonant character is entered
+    by the user. The program should work for both lower case and upper case letters. 
+    
+#   19. Write a C++ code to display only even numbers found between 0 and 20.
+    
+#   20. A multiplication table
+        
+               
+
+

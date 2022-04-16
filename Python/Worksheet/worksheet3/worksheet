@@ -1,0 +1,24 @@
+#   1. Write a float function triangle() that computes the area of a triangle using its two formal parameters h and w,
+        where h is the height and w is the length of the bases of the triangle. 
+    
+#   2. Write a float function rectangle() that computes and returns the area of a rectangle using its two float formal
+    parameters h and w, where h is the height and w is the width of the rectangle 
+        float rectangle(float h, float w)
+      
+#   3. The formula for a line is normally given as y = mx + b. Write a function Line() that expects three float
+    parameters, a slop m, a y-intercept b, and an x-coordinate x. the function computes the y-coordinate associated
+    with the line specified by m and b at x-coordinate. 
+
+#   4. Write a program that accepts a positive integer from the user and displays the factorial of the given number.
+    You should use a recursive function called factorial () to calculate the factorial of the number. 
+
+#   5. Develop a program that uses the function factorial () of exercise 4 to compute an approximation of e (Euler’s
+        number). Base your approximation on the following formula for e: 1 + 1/1! + 1/2! + 1/3! + … 
+
+
+#   6. Write a function called isPrime() that accepts a number and determine whether 
+        the number is prime or not. 
+
+#   7. Write a function called isEven() that uses the remainder operator(%) to determine whether an integer is even
+        or not   
+
