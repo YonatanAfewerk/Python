@@ -135,7 +135,36 @@
        
 #   8. Swap the contents of two variables using a third variable.
 
+        x = 15
+        y = 10
+
+        print("x =",x)
+        print("y =",y)
+
+
+        temp = x
+        x = y
+        y = temp
+
+
+        print("x =",x)
+        print("y =",y)
+        
 #   9. Swap the content of two variables without using a third variable.
+
+        x = 15
+        y = 10
+
+        print("x =",x)
+        print("y =",y)
+
+        x = x + y   
+        y = x - y
+        x = x - y
+
+
+        print("x =",x)
+        print("y =",y)
 
 #   11. Read 10 integers from the keyboard in the range 0 - 100, and count how many of them are larger than 50,and display this result
   
@@ -150,8 +179,44 @@
                  digits in the number = 5 + 3 + 6 =14 
             
 #   16. A program that Checks a given number is palindrome or not. A palindrome number is the one which is the
-           
+    
+    num = int(input("Number: "))
+
+    safe = num
+
+    reverse = 0
+    # reverse = '' 
+    digits = 0
+    while (num != 0):
+        x = num % 10    
+        # reverse += str(x) then you concatenate them as a string 
+        reverse *= 10
+        reverse += x
+        num //= 10 # floor division results a whole number adjusted to the left
+        digits += 1
+
+
+    print("Digits: ", digits)
+    print("Original Number", safe)
+    print("Reverse: ", reverse)
+
+    if (safe == reverse):
+        print("Its a Palinodrome!")
+    else:
+        print("its Not a Palinodrome :( ")
+         
 #   17. A program that displays the number of digits of a given number
+
+    num = int(input("Number: "))
+
+    digits = 0
+    if (num == 0):
+        print("Number : Zero")
+    while (num != 0):
+        num //= 10 # floor division results a whole number adjusted to the left
+        digits += 1
+
+    print("Digits: ", digits)
                      
 #   18. The factorial of a given number by a user
         

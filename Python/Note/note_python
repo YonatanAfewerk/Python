@@ -62,7 +62,7 @@
         *
         /
         ** -> exponential
-        // -> integer division 64 // 10 = 6
+        // -> integer division 64 // 10 = 6 floor division results a whole number adjusted to the left
         %  -> reminder 64 // 10 = 4
 
 # Flow (nested & chain)
