@@ -1,8 +1,8 @@
-maximum = int(input(" Please Enter the Maximum Value : "))
-total = 0
+import math
 
-for number in range(1, maximum+1):
-    if(number % 2 == 0):
-        total = total + number
+Radius = int(input("Enter Radius: "))
 
-print("The Sum of Even Numbers from 1 to {0} = {1}".format(number, total))
+Area = 3.14159 * math.pow(Radius,2)
+
+
+print("Area: ", Area)

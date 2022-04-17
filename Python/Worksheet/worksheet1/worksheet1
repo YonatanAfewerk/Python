@@ -65,13 +65,73 @@
     print("Sum: " , _sum)
         
 #   4. Add the even numbers between 0 and any positive integer number given by the user
- 
+    
+    _num = input("Enter The upperbound: ")
+    x = int(_num)
+
+    _sum = 0
+    for i in range(0, x + 1, 1):
+        if(i % 2 == 0):
+            _sum += i
+        
+    print("The Sum of Even number's between 1 -",x,"= ", _sum)
+    
 #   5. Find the average of two numbers given by the user
+
+    num1 = int(input("Enter 1st Number: "))
+    num2 = int(input("Enter 2nd Number: "))
+
+    z = (num1 + num2) / 2
+
+    print("Average of ", num1, " & ",num2, " = ", z)
 
 #   6. Find the average, maximum, minimum, and sum of three numbers given by the user
         num3)
-  
+        
+        num1 = int(input("Enter 1st Number: "))
+        num2 = int(input("Enter 2nd Number: "))
+        num3 = int(input("Enter 3rd Number: "))
+
+
+        z = (num1 + num2 + num3) / 3
+        _sum = num1 + num2 + num3
+
+        if ((num1 > num2 and num3) and num2 > num3):
+            _max = num1
+            _min = num3
+        elif ((num1 > num2 and num3) and num3 > num2):
+            _max = num1
+            _min = num2
+        elif ((num2 > num1 and num3) and num1 > num3):
+            _max = num2
+            _min = num3
+        elif ((num2 > num1 and num3) and num3 > num1):
+            _max = num2
+            _min = num1
+        elif ((num3 > num1 and num2) and num1 > num2):
+            _max = num3
+            _min = num2
+        elif ((num3 > num1 and num2) and num2 > num1):
+            _max = num3
+            _min = num1
+
+
+
+        print("Average of ", num1, " & ",num2, " = ", z)
+        print("Sum of ", num1," , ", num2 ," & ",num3, " = ", _sum)
+        print("Maximum of ", num1," , ", num2 ," & ",num3, " = ", _max)
+        print("Manimum of ", num1," , ", num2 ," & ",num3, " = ", _min)
+
 #   7. Find the area of a circle where the radius is provided by the user
+       
+        import math
+
+        Radius = int(input("Enter Radius: "))
+
+        Area = 3.14159 * math.pow(Radius,2)
+
+
+        print("Area: ", Area)
        
 #   8. Swap the contents of two variables using a third variable.
 
