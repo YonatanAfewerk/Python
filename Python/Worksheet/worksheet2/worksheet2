@@ -1,11 +1,37 @@
-#   1. Prompt the user for two numbers A & B, computes and displays C=A/B. If the number B is zero, displays a
-       
-#   2. Write a program that reads two integers (in any order) and then print either “multiple” or “not “according to
-  
+#   1. Prompt the user for two numbers A & B, computes and displays C=A/B. If the number B is zero, displays a Division by zero error message
+        A = int(input("Enter Number: "))
+        B = int(input("Enter Number: "))
 
-#   3. Write a program that reads two integers (in any order) and then print either “multiple” or “not” according to
+
+        if (B != 0):
+            C = A/B
+            print("Division: ", C)
+        else:
+            print("Division by Zero ERROR!")
+
+#   2. Write a program that reads two integers (in any order) and then print either “multiple” or “not” according to
     weather one of the integer is multiple of other.
-          
+       
+        a = int(input("Enter Number: "))   
+        b = int(input("Enter Number: "))    
+
+        # To get if they can be divide by eachother 
+        c = b / a   
+        d = a / b  
+
+        # To check if there Multiples 
+        x = c * a 
+        y = d * b   
+
+        if (b % a == 0):
+            if (x == b ):
+                print(b,": Is a Multiple of:", c, "x", a)
+        elif ( a % b == 0):  
+            if (y == a):
+                print(a,": Is a Multiple of: ", d, "x", b)
+        else:
+            print("Not a Multiple of!")
+   
 #   4. Write a program that takes two numbers from user and determines that first number is a factor of second
     number
      

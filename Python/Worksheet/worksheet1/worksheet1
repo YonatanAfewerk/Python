@@ -169,14 +169,44 @@
 #   11. Read 10 integers from the keyboard in the range 0 - 100, and count how many of them are larger than 50,and display this result
   
 #   12. Take an integer from the user and display the factorial of that number
+
+        x = int(input("Enter Number: "))
+
+        _fac = 1
+
+        for i in range(1, x + 1, 1):
+            _fac *= i
+            
+        print("Factorial: " , _fac)
       
 #   13. A program to find the sum of first N even numbers.
-          
+
+        num = int(input("Enter Number: "))
+
+
+        _sum = 0
+        for i in range(num):
+            if (i % 2 == 0):
+                _sum += i
+                
+
+        print(_sum)
+              
 #   14. A program to generate Fibonacci series. The first two digits in the series are 0 and 1 and the rest is
     computed by adding the preceding two digits. (i.e. 0 1 1 2 3 5 8 13 . . .) 
     
 #   15. A program to find the sum of digits of given number. If for example the given number is 536, the sum of
-                 digits in the number = 5 + 3 + 6 =14 
+                 digits in the number = 5 + 3 + 6 = 14 
+        x = int(input("Enter Number: "))
+
+        _digits = 0
+
+        while (x != 0):
+            last_d = x % 10
+            _digits += last_d
+            x //= 10
+
+        print("Digit Sum: ", _digits)
             
 #   16. A program that Checks a given number is palindrome or not. A palindrome number is the one which is the
     
@@ -220,3 +250,11 @@
                      
 #   18. The factorial of a given number by a user
         
+        x = int(input("Enter Number: "))
+
+        _fac = 1
+
+        for i in range(1, x + 1, 1):
+            _fac *= i
+            
+        print("Factorial: " , _fac)

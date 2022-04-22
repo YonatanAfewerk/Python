@@ -1,3 +1,3 @@
-elif ((num3 > num1 and num2) and num1 > num2):
-    _max = num3
-    _min = num2
+for i in range(1,6):
+    fruits.pop(i)
+
