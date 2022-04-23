@@ -1,3 +1,11 @@
+#  (Function) 
+
+    Function -> Arguments -> side effect
+    
+    
+    
+    print(object(s), separator=separator, end=end, file=file, flush=flush) 
+
 # Data Types and variables (Assigning)
     -> Data Types
             int = 0 , 1, ... numbers
@@ -55,7 +63,7 @@
 
                 print("Type of x:" ,type(x))      
                 print ("Sum: " , z)
-
+  
 # Operators 
         +
         -
@@ -297,6 +305,16 @@
                   
 # Strings 
 
+         Note:
+            #string concatenation (putting strings togthere can be done in different ways)
+            
+            engineer = "" #some string assigned to the variable
+            
+            # a few ways to do it
+            print("Is your name engineer " + engineer) 
+            print("Is your name engineer {}".format(engineer))
+            print(f"Is your name engineer {engineer}")
+
         String formatting 
             num = 6
             str = "i have {} Books!" . format(num)
@@ -313,6 +331,8 @@
 
         -> string methods
                 name = '  Yonatan Afewerk  '
+                name2 = "   Yonatan afewerk teshome  ".strip().title()
+                name3 = input("  hello, world!   ").title().strip()
 
                 strip()
                     It Removes every space before and after the string 
@@ -327,10 +347,103 @@
                     print(name.split('o')) #output  - ['  Y', 'natan Afewerk  ']
 
                     NOTE: Default on split() is a 'space'
+                title()
+                capitalize()
+                
+                replace("oldvalue", "newvalue")
 
 # File Handling 
 
 # Modular Programming 
+    ->  is a block of related statements designed to perform a computational, 
+        logical, or evaluative task. 
+        
+            How do you create a function
+                def function_name(parameters):
+                    """docstring"""
+                    statement(s)
+                    return expression
+                    
+                Eg.
+                    # defining a function
+                    def fun():
+                        print("Fun function")
+                    
+                    #calling a function 
+                    fun()
+                    
+                    # defining a function
+                    def evenOdd(x):
+                        if (x % 2 == 0):
+                            print("even")
+                        else:
+                            print("odd")
+ 
+                    # Driver code to call the function
+                    evenOdd(2)
+                    evenOdd(3)
+            
+            How to structure functions 
+                eg.
+                 
+                Type 1
+                        define a function 
+                        call a function 
+                Type 2
+                        def main() function to drive the user defind functions
+                        def user() functions second
+                        call main()
+                            
+                            Eg.
+                                #defining a main()
+                                def main():
+                                    odd_even(4)
+                                    odd_even(5)
+                                #defining the users function
+                                def odd_even(x):
+                                    if (x % 2 == 0):
+                                        print("Even!")
+                                    elif (x % 2 == 1):
+                                        print("Odd!")
+                                    else:
+                                        print("Zero!")
+                                # calling the main function
+                                main()
+                        
+                                    
+    ->  Types of Arguments    
+
+            Default arguments
+                    A default argument is a parameter that assumes a default value 
+                    if a value is not provided in the function call 
+                    for that argument.
+
+            Keyword arguments
+                    The idea is to allow the caller to specify the argument name 
+                    with values so that caller does not need to remember the 
+                    order of parameters.
+
+            Docstring
+                    first string after the function is called the Document string or 
+                    Docstring in short. This is used to describe the functionality 
+                    of the function.
+
+            The return statement
+                    def square_value(num):
+                        """This function returns the square
+                        value of the entered number"""
+                        return num**2
+
+
+                    print(square_value(2))
+                    print(square_value(-4))
+
+
+
+
+
+
+
 
 # Error handling 
 
