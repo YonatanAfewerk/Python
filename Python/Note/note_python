@@ -73,7 +73,28 @@
         // -> integer division 64 // 10 = 6 floor division results a whole number adjusted to the left
         %  -> reminder 64 // 10 = 4
 
-# Flow (nested & chain)
+    -> Membership Operator
+
+        - in 	
+            Returns True if a sequence with the specified 
+            value is present in the object	x in y	
+            
+                Eg. 
+                    x = ["apple", "banana"]
+
+                    print("banana" in x)
+
+            
+        - not in	
+            Returns True if a sequence with the specified
+            value is not present in the object	x not in y
+            
+                Eg.
+                    x = ["apple", "banana"]
+
+                    print("pineapple" not in x)
+
+# Flow (nested & chain) Conditionals 
     Conditions 
         -> (>, >=, <, <=, ==, !=)
 
