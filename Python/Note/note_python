@@ -140,6 +140,29 @@
                         print("No service")
     -> or, and, not
 
+    # Demonstrates chained comparisons
+
+    score = int(int("score: "))
+
+    if 90 <= score <= 100:
+        print("A")
+    elif 80 <= score <= 90:
+        print("B")
+    else:
+        print("F")    
+        
+    # Demonstrates fewer comparisons
+    
+    if score >= 90:
+        print("A")
+    elif score >= 80:
+        print("B")
+    else:
+        print("F")    
+        
+
+    
+
 # Loops
     -> For Loops
         Note: In Python, for loops only implements the collection-based iteration.    
