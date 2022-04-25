@@ -160,9 +160,6 @@
     else:
         print("F")    
         
-
-    
-
 # Loops
     -> For Loops
         Note: In Python, for loops only implements the collection-based iteration.    
@@ -481,13 +478,6 @@
 
                     print(square_value(2))
                     print(square_value(-4))
-
-
-
-
-
-
-
 
 # Error handling 
 
