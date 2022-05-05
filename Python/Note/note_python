@@ -162,6 +162,11 @@
         
 # Loops
     -> For Loops
+        for _ in range(50):
+            print("meow")
+                -> Note: if your not gonna use the variable used 
+                        for counting then you can use _
+                
         Note: In Python, for loops only implements the collection-based iteration.    
         
         for <variable> in range(start,stop,step):
@@ -265,7 +270,7 @@
             Note: Pass is also used for empty control statements, 
                   functions, and classes.
 
-# Lists, Tuples and how to work with them 
+# Lists, Tuples, dicts and how to work with them 
 
         -> Lists are just like dynamically sized arrays amd are indexed 0-n
         
@@ -344,6 +349,32 @@
                         for i in range(1,6):
                             fruits.pop(i)   # specified position of the element are removed
                   
+                  
+                  
+        -> Dictionary
+            Eg. 
+            students = {
+                "Hermione":"Gryffindor",
+                "Harry":"Gryffindor",
+                "Ron":"Gryffindor",
+                "Draco":"Slytherin", 
+            }
+           
+            for i in students:
+                print(i, students[i], sep =", ")
+                
+                eg, lists with dictionary
+                
+                    students = [
+                        {"Name": "Hermione", "House":"Gryffindor","Patronus":"Otter"},
+                        {"Name": "Harry", "House":"Gryffindor","Patronus":"Stag"},
+                        {"Name": "Ron", "House":"Gryffindor","Patronus":"Jack Russell terrier"},
+                        {"Name": "Draco", "House":"Slytherin","Patronus": None},
+                    ]
+
+                    for i in students:
+                        print(i["Name"], i["House"], i["Patronus"], sep = ", ")
+    
 # Strings 
 
          Note:
@@ -369,8 +400,8 @@
                                 b[start:stop:step]
             Insert slice        b[1:2] = 'Added'    # on to lists
             Membership          [r]
-
-        -> string methods
+                     
+# String methods
                 name = '  Yonatan Afewerk  '
                 name2 = "   Yonatan afewerk teshome  ".strip().title()
                 name3 = input("  hello, world!   ").title().strip()
@@ -483,11 +514,142 @@
 
 # Global n Local variables 
 
+# Exception Handling using the (Try statement)
+    Error in Python can be of two types i.e. Syntax errors and Exceptions. Errors are the problems 
+    in a program due to which the program will stop the execution. On the other hand, exceptions are 
+    raised when some internal events occur which changes the normal flow of the program.
+        Exceptions: Exceptions are raised when the program is syntactically correct, but the code resulted 
+                    in an error. This error does not stop the execution of the program, however, it changes 
+                    the normal flow of the program.
+                    
+        NOTE:
+            Handling Exceptions with Try/Except/Finally 
+            We can handle errors by the Try/Except/Finally method. 
+                we write unsafe code in the try, 
+                fall back code in except and 
+                final code in finally block.
+                    
+                    
 
+        -> Try and Except Statement
+                syntax: 
+                
+                try:
+                    # Some Code
+                except:
+                    # Executed if error in the
+                    # try block
+                    
+                    -> Eg.
+                        try:
+                            # statement(s)
+                        except IndexError:
+                            # statement(s)
+                        except ValueError:
+                            # statement(s)
 
+                                        try:
+                                            x = int(input("Enter X: "))
+                                        except ValueError:
+                                            print("Invalid input")    :
 
+        -> Try with Else Clause
 
+                    syntax:
+                        try:
+                            # Some Code
+                        except:
+                            # Executed if error in the
+                            # try block
+                        else:
+                            # execute if no exception
+                    
+                        Eg.
+                            while True:
+                                try:
+                                    x = int(input("Enter X:"))
+                                except ValueError:
+                                    print("Please Enter only int's")
+                                else:
+                                    print(f"x = {x}")
+                                    break
+                                    
+                                or
+                        
+                            while True:
+                                try:
+                                    x = int(input("Enter X:"))
+                                    break
+                                except ValueError:
+                                    print("Please Enter only int's")
+                                    continue
+                                print(f"x = {x}")
+                    
+                    
+                    
+                    
+                    
+                    Eg: 
+                        try:
+                            # statement(s)
+                        except ZeroDivisionError:
+                            # statement(s)
+                        else:
+                            # statement(s)
 
+        -> Finally Keyword
+            syntax Eg: 
+                try:
+                    # Some Code.... 
+                except:
+                    # optional block
+                    # Handling of exception (if required)
+                else:
+                    # execute if no exception
+                finally:
+                    # Some code .....(always executed)
+                    
+                    
+                    
+            Some of the common built-in exceptions are other than above mention exceptions are:
+            
+                    Exception	            Description
+                    
+                    IndexError	            When the wrong index of a list is retrieved.
+                    AssertionError	        It occurs when the assert statement fails
+                    AttributeError	        It occurs when an attribute assignment is failed.
+                    ImportError	            It occurs when an imported module is not found.
+                    KeyError	            It occurs when the key of the dictionary is not found.
+                    NameError	            It occurs when the variable is not defined.
+                    MemoryError	            It occurs when a program runs out of memory.
+                    TypeError	            It occurs when a function and operation are applied in an incorrect type.
+                    
+        Note:
+        def main():
+            x = get_int("Enter x: ")
+            
+            print(f"x = {x}")
+
+        def get_int(prompt):
+            while True:
+                try:
+                    return int(input(prompt))
+                except ValueError:
+                    pass # you can use "continue" as well
+        main()
+
+        
+        -> EOFError handling 
+                Note: 
+                    while True:
+                        try:
+                            o_in = input(prompt).title()
+                            if o_in in order_list:
+                                total_p += order_list[o_in]
+                                print(f'Total: ${total_p:.2f}')
+                        except EOFError:
+                        break
+                    
 
 📘 Intermediate Python 📘
 # OOP
