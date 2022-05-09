@@ -650,6 +650,85 @@
                         except EOFError:
                         break
                     
+# Libraries
+    is a collection of related modules. It contains bundles of 
+    code that can be used repeatedly in different programs
+    
+    
+    # Importing math library works like this 
+    import math
+    
+    A = 16
+    print(math.sqrt(A))
+    
+    # Importing specific items
+    from math import sqrt, sin
+    
+    A = 16
+    B = 3.14
+    print(sqrt(A))
+    print(sin(B))
+
+
+    import statistics
+
+    num = [100, 100, 50, 50, 100]
+
+    print(statistics.mean(num))
+
+    -> The Random module
+
+            implements pseudo-random number generators for various distributions.
+                EG. use random.chose for a single value from a list
+            
+                Eg. (choices)
+            
+                import random 
+                colors = ["Red","Yellow","Green"]
+                                                                    - amount to be picked set in k
+                results = random.choices(colors, weights = [15,15,2], k = 5)
+                                                - chance of getting picked
+                Eg. (randint)
+                
+                num = random.randint(1, 5) -> chosen randomly through and also includes the 1,5
+
+                Eg. shuffle(x[, random])
+                    - shuffles inside the list it self but not into a variable 
+                    
+                Eg. sys
+                
+                import sys
+
+                n = len(sys.argv)
+
+                for i in sys.argv[1:]:
+                    print(f"He, {i}")
+                    print("He, He")
+        -> the sys (Takes argument from the terminal ) and cowsay library
+        
+        import cowsay 
+        import sys
+
+        if len(sys.argv) == 2:
+            cowsay.trex("Hello, " + sys.argv[1])
+            
+        
+        
+        -> using the request module 
+        import requests 
+        import sys 
+
+        if len(sys.argv) != 2:
+            sys.exit(1)
+            
+
+        response = requests.get(f"https://itunes.apple.com/search?entity=song&limit=1&term={sys.argv[1]}")
+
+        print(response.json()) # prints the response on a json() file
+
+
+            
+            
 
 📘 Intermediate Python 📘
 # OOP

@@ -1,9 +1,9 @@
 def main():
-    d_out = get_date('Date: ')
-
-    x = int(d_out[0])
-    y = int(d_out[1])
-    z = int(d_out[2])
+    year, month, day = get_date('Date: ')
+    
+    x = int(year)
+    y = int(month)
+    z = int(day)
 
     # output that same date in YYYY-MM-DD format.
 
@@ -39,68 +39,63 @@ def get_date(prompt):
         try:
             date_in = input(prompt).title()
             if p in date_in:
-                list_ = date_in.split('/')
-                
-                k = list_[0]
-                k = int(k)
-                
-                if k > 12:
-                    raise ValueError
-                elif k < 12:       
+                month, day, year = date_in.split('/')
+
+                if 1 <= int(month) <= 12 and 1 <= int(day) <= 31:
                     return first_form(date_in)
-            else:
-                x, y, z = date_in.split(" ")
-
-                y = y.split(',')
-                c = y[0]
-                c = int(c)
-
-                if c >= 32:
+                else:
                     raise ValueError
 
-                if x in date_list:
-                    n  = date_list.index(x)
-                    n += 1
-                    
-                    if n > 12:
-                        raise ValueError
-                    elif n <= 12:
-                        return sec_form(date_in, n)
+
+            else:
+                old_month, old_day, year = date_in.split(" ")
+
+                day = old_day.split(',')
+                day = day[0]
+                day = int(day)
+
+                if old_month in date_list:
+                    month  = date_list.index(old_month)
+                    month += 1
+
+                if 1 <= int(month) <= 12 and 1 <= int(day) <= 31:
+                    return sec_form(date_in, month)
+                else:
+                    raise ValueError
         except ValueError:
             pass
 
 
-def first_form(x):
+def first_form(date_in):
     ans_list = []
 
-    list_ = x.split('/')
-    
-    ans_list.append(list_[2])
-    ans_list.append(list_[0])
-    ans_list.append(list_[1])
+    month, day, year = date_in.split('/')
+
+    ans_list.append(year)
+    ans_list.append(month)
+    ans_list.append(day)
 
     return ans_list
 
-
-def sec_form(l, n):
+def sec_form(date_in, month_):
     ans_list = []
-    x, y, z = l.split(" ")
-    x = n # month after getting the index from the list and adding 1 to it
+    month, old_day, year = date_in.split(" ")
+    month = month_ # month after getting the index from the list and adding 1 to it
 
-    y_n = "".join(str(i) for i in y)
+    _day_ = "".join(str(i) for i in old_day)
 
-    y = y.split(',')
-    c = y[0]
-    c = int(c)
+    old_day = old_day.split(',')
+    c = old_day[0]
+    day_num = int(c)
 
-    if c >= 10:
-        new_y = y_n.replace(y_n, y_n[0:2])
+    if day_num >= 10:
+        new_day = _day_.replace(_day_, _day_[0:2])
     else:
-        new_y = y_n.replace(y_n, y_n[0])
+        new_day = _day_.replace(_day_, _day_[0])
 
-    ans_list.append(z)
-    ans_list.append(x)
-    ans_list.append(new_y)
+    ans_list.append(year)
+    ans_list.append(month)
+    ans_list.append(new_day)
 
     return ans_list
 
