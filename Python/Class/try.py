@@ -2,6 +2,7 @@ import requests
 from sys import argv, exit 
 import json
 
+
 if argv[1] != 2:
     exit(1)
 
