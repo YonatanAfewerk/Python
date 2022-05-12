@@ -715,30 +715,80 @@
         
         
         -> using the request module 
-        import requests 
-        import sys 
-        (from sys import argv, exit)
-        import json
+        Python requests module has several built-in methods to make Http requests to specified 
+        URI using GET, POST, PUT, PATCH or HEAD requests. 
 
-        if len(sys.argv) != 2: 
-        (you can use argv only since u import argv directly from sys)
-            sys.exit(1) (exit(1))
-            
-        Note: edit the list limit to get more response's 
-        response = requests.get(f"https://itunes.apple.com/search?entity=song&limit=1&term={sys.argv[1]}")
+        Method	        Description
 
-        # print(json.dumps(response.json(), indent = 2))
+        GET	            method is used to retrieve information from the given server using a given URI.
+        POST	        request method requests that a web server accepts the data enclosed in the 
+                        body of the request message, most likely for storing it
+        PUT	            method requests that the enclosed entity be stored under the supplied URI. 
+                        If the URI refers to an already existing resource, it is modified and if the URI 
+                        does not point to an existing resource, then the server can create the resource 
+                        with that URI.
+        DELETE	        method deletes the specified resource
+        HEAD	        method asks for a response identical to that of a GET request, but without 
+                        the response body.
+        PATCH	        It is used for modify capabilities. The PATCH request only needs to contain the changes to 
+                        the resource, not the complete resource
+                
+            - GET
+                 method is used to retrieve information from the given server using a given URI
+                 
+                 requests.get(url, params={key: value}, args)
 
-        o = response.json()
-
-        for result in o["results"]:
-            print("Track Name: ",result["trackName"])
-            print("Artist Name: ", result["artistName"])
-            print("Album Name: ",result["collectionName"])
-            print("Preview: ",result["previewUrl"])
+          - Response object
+            When one makes a request to a URI, it returns a response. This Response object in terms of 
+            python is returned by requests.method(), method being – get, post, put, etc. Response is a 
+            powerful object with lots of functions and attributes that assist in normalizing data or 
+            creating ideal portions of code.
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        eg. 
+            import requests 
+            import sys 
+            (from sys import argv, exit)
+            import json
+
+            if len(sys.argv) != 2: 
+            (you can use argv only since u import argv directly from sys)
+                sys.exit(1) (exit(1))
+                
+            Note: edit the list limit to get more response's 
+            response = requests.get(f"https://itunes.apple.com/search?entity=song&limit=1&term={sys.argv[1]}")
+
+            # print(json.dumps(response.json(), indent = 2))
+
+            o = response.json()
+
+            for result in o["results"]:
+                print("Track Name: ",result["trackName"])
+                print("Artist Name: ", result["artistName"])
+                print("Album Name: ",result["collectionName"])
+                print("Preview: ",result["previewUrl"])
+
+
+
+
+
+
+# API (Aplications programming interface)
             
             
 
