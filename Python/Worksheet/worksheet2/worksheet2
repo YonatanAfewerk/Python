@@ -8,7 +8,19 @@
             print("Division: ", C)
         else:
             print("Division by Zero ERROR!")
-
+            
+            
+            or (using the try exception)
+            
+            while True:
+                try:
+                    if b % 2 == 0:
+                        C = A/B
+                        print("Division: ", C)
+                except ZeroDivisionError:
+                    print("Division by Zero ERROR!")
+                    pass
+                         
 #   2. Write a program that reads two integers (in any order) and then print either “multiple” or “not” according to
     weather one of the integer is multiple of other.
        
@@ -33,12 +45,42 @@
             print("Not a Multiple of!")
    
 #   4. Write a program that takes two numbers from user and determines that first number is a factor of second
-    number
+    # number
+    
+    x = int(input("Number 1: "))
+    y = int(input("Number 2: "))
+
+
+    if x % y == 0:
+        print("x is a factor of your")
+    else:
+        print("Not a a factor")
      
 #   5. Write a program that mimics a calculator. The program should take as input two integers and the operation
-    to be performed. It should then output the numbers, the operator, and the result. (For division, if the
-    denominator is zero, output an appropriate message.) Use 1 for Addition, 2 for Subtraction, 3 for Multiplication,
-    and 4 for Division.
+#    to be performed. It should then output the numbers, the operator, and the result. (For division, if the
+#    denominator is zero, output an appropriate message.) Use 1 for Addition, 2 for Subtraction, 3 for Multiplication,
+#    and 4 for Division.
+    x = int(input("Number 1: "))
+    z = input("Sign: ")
+    y = int(input("Number 1: "))
+
+
+
+    try:
+        if z == "-":
+            val = x - y
+            print(f"Sub: {val}")
+        elif z == "*":
+            val = x * y
+            print(f"Multi: {val}")
+        elif z == "/":
+            val = x / y
+            print(f"Division: {val}")
+        elif z == "+":
+            val = x + y
+            print(f"Add: {val}")
+    except ZeroDivisionError:
+            print("Zero division Error! ")
 
 #   6. Write a program that calculate the real roots of a quadratic equation and displays the result.
         

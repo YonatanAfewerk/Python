@@ -426,6 +426,149 @@
 
 # File Handling 
 
+    open() function
+        File_object = open(r"File_Name", "Access_Mode")
+
+    Note: The file should exist in the same directory as the Python script, 
+    otherwise full address of the file should be written. 
+
+        file = open('geek.txt', 'r')
+        // statement(s)
+        file.close()
+
+
+    NOTE:
+        if you want to close the file in the pythonic way use 
+       
+                name = input("Enter Name: ")
+
+                with open("name.txt", 'a') as file:
+                    file.write(f"{name}\n")
+
+
+                with open("name.txt", 'r') as file:
+                    lines = file.readlines()
+
+                for line in lines:
+                    print(f"hello, {line.strip()}")
+
+        how to store info in file the read it store it in memory and use it
+
+                names = []
+                # with open("name.txt", 'a') as file:
+                #     file.write(f"{name}\n")
+
+
+                with open("name.txt", 'r') as file:
+                    for line in file:
+                        names.append(line.strip())
+
+
+                for name in sorted(names, reverse=True):
+                    print(f"hello, {name}")
+
+
+
+
+            Where the following mode is supported:
+
+            r: open an existing file for a read operation.
+            w: open an existing file for a write operation. If the file already contains some data then it will be overridden.
+            a:  open an existing file for append operation. It won’t override existing data.
+            r+:  To read and write data into the file. The previous data in the file will be overridden.
+            w+: To write and read data. It will override existing data.
+            a+: To append and read data from the file. It won’t override existing data.
+
+
+        read() mode
+            use file.read()
+
+                # Python code to illustrate read() mode
+                file = open("file.txt", "r")
+                print (file.read())
+
+                            
+                # Python code to illustrate read() mode character wise
+                file = open("file.txt", "r")
+                print (file.read(5))
+
+
+        write() mode
+
+            write() :   Inserts the string str1 in a single line in the text file.
+                        File_object.write(str1)
+
+            writelines() :  For a list of string elements, each string is inserted in the text file. Used to insert multiple strings at a single time.
+                            File_object.writelines(L) for 
+                            L = [str1, str2, str3]
+
+            file = open('file.txt', 'w')
+            file.write("This is the write command")
+            file.write("It allows us to write in a particular file")
+            file.close()
+
+            l = ['1. Hello World','2. Hello World','3. Hello World']
+
+            file = open('file.txt', 'a')
+            file.writelines(l)
+            file.close()
+
+        append() mode
+
+            file = open('file.txt', 'a')
+            file.write("\nThis is the write append 2 command")
+            file.write("It allows us to append txt in a particular file")
+            file.close()
+
+        split() using file handling
+
+            file = open('file_.txt', 'w')
+            file.write("Yonatan Afewerk Teshome Degefu Hayele Shenkuti")
+            file.write("\nLeading The tech world directly from Africa")
+            file.close()
+
+
+            with open('file_.txt', 'r') as file:
+                data = file.readlines()
+                for line in data:
+                    print(line.split())
+                    
+
+
+        Using a CSV a comma separated text file saved as File_Name.csv
+            NOTE: you can do it without using a dict as well
+            # name = input("Enter Name: ")
+            from audioop import reverse
+            names = {}
+            # with open("name.txt", 'a') as file:
+            #     file.write(f"{name}\n")
+
+
+            with open("name.csv") as file:
+                for line in file:
+                    line.rstrip()
+                    key, value = line.split(',')
+                    names[key] = value
+
+            for i in names:
+                print(f"{i} is in {names[i].rstrip()}")
+
+
+
+            how to use dicts and sort them usign a funciton and the 
+            key arg in sort() and using lambda
+
+            students = []
+
+            with open("name.csv") as file:
+                for line in file:
+                    name , house = line.rstrip().split(",")
+                    student = {"name":name, "house":house}
+                    students.append(student)
+
+            for stu in sorted(students, key= lambda student: student["name"]):
+                print(f"{stu['name']} is for {stu['house']}")
+
 # Modular Programming 
     ->  is a block of related statements designed to perform a computational, 
         logical, or evaluative task. 
@@ -509,8 +652,6 @@
 
                     print(square_value(2))
                     print(square_value(-4))
-
-# Error handling 
 
 # Global n Local variables 
 
@@ -783,6 +924,41 @@
                 print("Album Name: ",result["collectionName"])
                 print("Preview: ",result["previewUrl"])
 
+# Unit Testing 
+    
+    Import the function to test withint the test_ file
+
+    using the assert method (the print function need to be inside 
+    the main function)
+
+    eg.
+
+        from twttr import shorten
+
+
+        def main():
+            test_twttr()
+            
+        def test_noreplacment():
+            assert shorten("twttr") == "twttr"
+
+        def test_lower():
+            assert shorten("twitter") == "twttr"
+
+        def test_upper():
+            assert shorten("TWITTER") == "TWTTR"
+            
+        def test_numbers():
+            assert shorten("0") == "0"
+            assert shorten("123") == "123"
+            assert shorten("-1") == "-1"
+            
+        def test_punctuation(): 
+            assert shorten("twitter,") == "twttr,"
+            
+
+        if __name__ == "__main__":
+            main()
 
 
 
@@ -816,3 +992,12 @@
 # Decorators
 # Generators
 # Context Managers
+
+
+
+
+# How to make a program into an app
+
+pip install pyinstaller
+
+pyinstaller --windowed --onefile --icon="pdf.png" main.py

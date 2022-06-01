@@ -1,15 +1,29 @@
-import requests
-from sys import argv, exit 
-import json
+def main():
+    print(get_int())
+    
+def get_roman(roman):
+    dict = {
+        'I':1,
+        'V':5,
+        'X':10,
+        'L':50,
+        'C':100,
+        'D':500,
+        'M':1000
+        }
+    sum = 0
+    for i in roman:
+        for j in dict:
+            if i == j:
+                sum += dict[j]
+    return sum
 
-
-if argv[1] != 2:
-    exit(1)
-
-response = requests.get(
-    f"https://itunes.apple.com/search?entity=song&limit=1&term={sys.argv[1]}")
-
-o = response.json()
-
-for result in o["results"]:
-    print("Artist Name: ", result["artistName"])
+def get_int():
+    roman = input("Input: ")
+    return get_roman(roman)
+    
+    
+    
+    
+if __name__ == "__main__":
+    main()

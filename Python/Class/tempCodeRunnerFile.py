@@ -1,1 +1,2 @@
-elhi technological
+if i.isdigit():
+                pass
