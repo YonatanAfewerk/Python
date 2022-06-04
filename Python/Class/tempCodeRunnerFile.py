@@ -1,2 +1,2 @@
-if i.isdigit():
-                pass
+
+		print("Query Exec

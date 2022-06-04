@@ -558,16 +558,49 @@
             how to use dicts and sort them usign a funciton and the 
             key arg in sort() and using lambda
 
+            Ron,The Burrow
+            Draco,Malfoy Manor
+            Draco,Malfoy Manor
+    
+
             students = []
 
-            with open("name.csv") as file:
+            with open("students.csv") as file:
                 for line in file:
-                    name , house = line.rstrip().split(",")
-                    student = {"name":name, "house":house}
+                    name , house = line.rstrip().split(',')
+                    student = {"Name":name , "House":house}
                     students.append(student)
+                    
+            for student in sorted(students, key=lambda _: student['Name']):
+                print(f"{student['Name']} is in {student['House']}")
 
-            for stu in sorted(students, key= lambda student: student["name"]):
-                print(f"{stu['name']} is for {stu['house']}")
+
+            how to write and read using CSV module for better and adaptable code 
+
+            name,home
+            Ron,The Burrow
+            Draco,Mallow Manor
+            Harry,"Number Four,Privet Drive"
+
+                import csv
+                students = []
+
+                name = input("Name: ")
+                home = input("Home: ")
+
+                with open('student_.csv' , 'a') as file:
+                    writer = csv.DictWriter(file, fieldnames=['name', 'home'])
+                    writer.writerow({"name":name, "home":home})
+                    
+                    
+                with open('student_.csv') as file:
+                    reader = csv.DictReader(file)
+                    for row in reader:
+                        students.append({"Name":row["name"], "Home":row["home"]})
+                        
+
+                for student in sorted(students, key=lambda student: student['Name']):
+                    print(f"{student['Name']} is in {student['Home']}")
 
 # Modular Programming 
     ->  is a block of related statements designed to perform a computational, 
@@ -960,8 +993,9 @@
         if __name__ == "__main__":
             main()
 
+# GUI 
 
-
+    How to 
 
 
 # API (Aplications programming interface)
