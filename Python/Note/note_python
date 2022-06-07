@@ -995,10 +995,248 @@
 
 # GUI 
 
-    How to 
+    Tkinter ...  
+        from tkinter import *
+
+        # Window instance 
+            root = Tk()
+            root.title('Window Name')
+            root.configure(bg='color name')
+
+            root.geometry('1000x500')
+            root.resizable('False','False')
 
 
-# API (Aplications programming interface)
+            -> using class layout 
+                from tkinter import *
+
+
+                    # the calculations happens here
+
+                class root(Tk):
+                    def __init__(self):
+                        super(root, self).__init__()
+                    # the tkinter design  
+                        self.title('Calculator v.0.0')
+                        self.minsize(500,400)
+                            
+                    # text box for the output
+
+
+
+                root = root()
+                root.mainloop()
+
+        # Create Label
+            label_name = Label(root, text='Label Name', font=("font_name",10)).place(x=0,y=0)
+
+            -> if you want entry box after the label
+
+                label_name = Label(root, text='Label Name', font=("font_name",10)).place(x=0,y=0)
+                label_entry = Entry(root, font=("font_name",10), width=15).place(x=0,y=0))
+  
+        # Layout Managers
+            
+                # for simple layout
+            pack()
+
+                Pack geometry manager packs widgets relative to the earlier widget. 
+                Tkinter literally packs all the widgets one after the other in a window.  
+                We can use options like fill(X,Y,BOTH), expand(1,0), and side(left,right,top,bottom) to control this geometry 
+                manager.
+
+                # most used layout
+            grid(row = 0, column = 0, sticky = W, pady = 2`)
+
+                # not used that much
+            place(x=10,y=10), y=10
+
+        # Create Button
+            from tkinter import ttk
+
+            button_name = ttk.Button(root, text='Button' font=("font_name",10), command=connect_function).place(x=0,y=0)
+       
+        # Create TextBox
+            
+                # how to create and store data from the entry/ TextBox
+
+            label_ = Label(self, text="Name")
+            label_.grid(column=0,row=4)
+            entry = ttk.Entry(self, font=self.labelFont, width=20)
+            entry.focus() -> to get the writer in the box 
+            entry.grid(column=1,row=4)
+
+
+                -> to get the data 
+            entry.get() (from specific function to access the input)
+
+        # Create ComboBox
+
+            from tkinter.ttk import *       
+
+                combo = Combobox(root, width=20)
+                label_ = Label(root, text='ComboBox', font=("font_name",10)).place(x=0,y=0)
+                combo['values']= (1,2,3,4,5,'values')
+                combo.current(5) -> for the default value's index
+                combo.place(x=0,y=0)
+
+        # Create RadioButton
+
+            rad1 = ttk.Radiobutton(self, text='Red', value=1)
+            rad1.grid(column=0,row=6) -> Tip if u actually use the data use this structure
+             
+            rad1 = ttk.Radiobutton(self, text='Yellow', value=2).grid(column=1, row=6)
+            rad1 = ttk.Radiobutton(self, text='Black', value=3).grid(column=2, row=6)
+
+        # Create CheckButton
+
+            rad1 = ttk.Checkbutton(self, text='Red')
+            rad1.grid(column=0,row=6) -> Tip if u actually use the data use this structure
+             
+            rad1 = ttk.Checkbutton(self, text='Yellow').grid(column=1, row=6)
+            rad1 = ttk.Checkbutton(self, text='Black').grid(column=2, row=6)
+
+        # Create ScrollTextControl
+
+                from tkinter import scrolledtext
+
+                    scrollText = st.ScrolledText(self, width=30, height=10, wrap=WORD)
+                    scrollText.grid(column=0, row=8)
+
+        # Create LabelFrame
+
+            Use LabelFrame widget to group related widgets into one group.
+            Use ttk.LabelFrame(container, **option) to create a LabelFrame widget.
+
+                    # Labelframe (create frames with the instance and create widgets within the frame)
+                
+                Labelframe = ttk.Labelframe(self, text='Label Frame')
+                Labelframe.grid(column=0, row=9, padx=20, pady=40)
+                
+                ttk.Label(Labelframe, text="one").grid(column=0,row=0, pady=20, padx=20)
+                ttk.Label(Labelframe, text="two").grid(column=0,row=1 , pady=20, padx=20)
+                ttk.Label(Labelframe, text="three").grid(column=2,row=0 , pady=20, padx=20)
+                ttk.Label(Labelframe, text="four").grid(column=2,row=1 , pady=20, padx=20)
+                
+                    # Scroll text with in label frame
+                
+                scrollText = st.ScrolledText(Labelframe, width=30, height=10)
+                scrollText.grid(column=3, row=0)
+            
+        # Create Menu and Menuitems
+
+                menuBar = Menu(self)
+                self.config(menu = menuBar)
+                
+                file_menu = Menu(menuBar, tearoff=0)
+                menuBar.add_cascade(label='File', menu= file_menu)
+                file_menu.add_command(label='New')
+                file_menu.add_command(label='Exit')
+                file_menu.add_separator()
+                file_menu.add_command(label='Open')
+                
+                help_menu = Menu(menuBar, tearoff=0)
+                menuBar.add_cascade(label='Help', menu=help_menu)
+                help_menu.add_command(label='About')    
+                
+        # Create Menu Commands
+
+            menuBar = Menu(root)
+            root.config(menu = menuBar)
+
+            file_menu = Menu(menuBar, tearoff=0)
+            menuBar.add_cascade(label='File', menu=file_menu)
+            file_menu.add_command(label='Exit', command=root.destroy) 
+            (you can use other function as well)
+            file_menu.add_separator()
+
+        # Create Tab widget and adding widgets to tab
+
+                tab_control = ttk.Notebook(root)
+                tab1 = ttk.Frame(tab_control)
+                tab_control.add(tab1, text = 'Tab 1')
+
+                tab2 = ttk.Frame(tab_control)
+                tab_control.add(tab2, text = 'Tab 2')
+
+                tab_control.pack(expand=1, fill=BOTH)
+
+
+                Label(tab1, text = 'This from Tab 1').pack()
+                Label(tab2, text = 'This from Tab 2').pack()
+
+        # Create MessageBox
+                  ->  from tkinter import messagebox
+                 
+
+            button = ttk.Button(root, text='Click', command=message).pack()
+
+
+            def message(): 
+                messagebox.showinfo('Tab name', 'Message')          
+
+        # Create Multi ChoiceBox
+            from tkinter import messagebox
+
+                answer = messagebox.askyesnocancel('?', 'Do you want to retry').pack()
+        
+                if answer == True:
+                    self.destroy
+                else:
+                    print('Great')
+
+        # Create Create SpinBox
+
+                    spin = Spinbox(self, from_= 0 , to = 100).pack()
+
+        # Create Create Canvas adding image to the canvas
+               
+                from PIL import ImageTk, Image
+
+            canvas = Canvas(self, bg='yellow', height=450, width=300)
+            coord = 10, 50, 240, 210
+            canvas.pack(expand=1, fill=BOTH)
+            
+            img = Image.open('mountain.jpg')
+            canvas.image = ImageTk.PhotoImage(img)
+            canvas.create_image(0,0, image=canvas.image, anchor='nw')
+
+        # How to Embed Matplotlib
+                from matplotlib.figure import Figure
+                from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
+
+
+
+                f = Figure(figsize=(5,5), dpi=100)
+                a = f.add_subplot(111)
+                
+                a.plot([1,2,3,4,5,6],[8,3,4,1,2,9])
+                
+                canvas = FigureCanvasTkAgg(f, self)
+
+                canvas.get_tk_widget().pack(side=BOTTOM, fill=BOTH, expand=1)    
+                
+                canvas._tkcanvas.pack(side=TOP, fill=BOTH, expand=1)    
+
+        # adding Legends and Navigation
+
+        # Browsing File
+
+        # MySQL Database connection
+
+        # inserting data to MySQL
+
+        # Create ListBox
+
+        # Color Chooser
+
+        # Tips 
+
+            How to import icon's into instance's  
+                root.wm_iconbitmap('icon_name.ico')
+
+
+# API (Applications programming interface)
             
             
 

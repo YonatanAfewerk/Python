@@ -19,7 +19,7 @@ def main():
     if (Choice == 1):
         sub_(x,y)
     elif(Choice == 2):
-        add(x,y)
+        add_(x,y)
     elif(Choice == 3):
         times_(x,y)
     elif(Choice == 4):
