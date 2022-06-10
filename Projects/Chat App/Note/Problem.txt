@@ -1,0 +1,10 @@
+3. Chatting application:
+With this application, you can now:
+    • Learn more about Local Area Networks, networks, connections, and the internet
+    • Create and connect to super-secret, anonymous chat rooms 
+    • Every chatroom is password protected and is hosted discretely in its own port, 
+      which means no uninvited guests!
+    • Messages sent through the application are never stored physically or virtually 
+      after shutting down the chat, which means you'll leave no trace of any interaction 
+      behind whatsoever!!!
+    • Chat with anyone connected to your internet!

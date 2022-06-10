@@ -22,7 +22,7 @@ class root(Tk):
         self.button = ttk.Button(self, text='Touch Me', command=self.message).grid(column=0, row=0)
 
 
-    def create_browsing(self): 
+    def create_frame(self): 
         pass  
 
 root = root()

@@ -1,0 +1,147 @@
+
+: Plan is to create a server to let multiple clients connect and sent message between them.
+
+    Server side:
+
+            Step's to create a server:
+                # 0 import 
+
+            import socket
+            import threading 
+
+                # 1 write the right PORTS(needs to be free) and SERVER for the server side
+
+            PORT = 2427
+            SERVER = socket.gethostbyname(socket.gethostname()) 
+                    # how to automatically get your public(IPv4) Ip address
+            ADDRESS = (SERVER, PORT) # Address stored as a tuple
+
+                # 2 Handling client's 
+
+            HEADER = 64
+            FORMAT = 'utf-8' # function for encoding, decoding 
+            DISCONNECT_MESSAGE = '!DISCONNECT'
+            clients, names = [], [] # list's to store connected users
+
+
+                # 3 Creating the server using (family, type) of connection and binding it to the socket 
+
+            server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            server.bind(ADDRESS)
+
+
+                # 4 How to handle client's
+                
+            def startServer():
+                print('[NEW CONNECTION]' + SERVER)
+
+                server.listen()
+
+                    # accepts connections and returns a key value bound to a new connection and address to the client 
+
+                while True:
+                    conn, addr = server.accept()
+                    conn.send('CONNECT'.encode(FORMAT))
+
+                        # Gets the name from the client 
+                    name = conn.recv(1024).decode(FORMAT)
+
+                    names.append(name)
+                    clients.append(conn)
+
+                    print(f"Name: {name}")
+
+
+                        # using a function tell other clients who joined the server
+                    broadcastMessage(f'{name} has joined the C-ተወያይ-hat!'.encode(FORMAT))
+
+                        # Notify the client it self with 
+                    conn.send(f'[SUCCESSFUL!] Connected...'.encode(FORMAT))
+
+
+                        # start handling the thread using the threading module 
+                    thread = threading.Thread(target= handle, args=(conn, addr))
+                    thread.start()
+
+                        # we subtract 1 for the already existing thread 
+                    print(f'[Active Connection established] : {threading.active_count() - 1}')
+
+                # 5 handling incoming message's from other clients on the server 
+            def handle(conn, addr):
+                print(f'[New Connection] : {addr}')
+
+                connected = True
+
+                while connected:
+                        # receiving the message from the client's 
+                    message = conn.recv(1024)
+
+                        # sending it to the function that sends's it to ever client
+                    broadcastMessage(message)
+
+                    # closing the connection 
+                conn.close()
+
+                # 5 broadcasting the message to each client
+            def broadcastMessage(message):
+                    # with in the clients list are the connected clients connections basically (conn.send(message) but for each client)
+
+                for client in clients:
+                    client.send(message)
+
+
+                # 6 calling the Function to begin the communication's 
+            startServer()
+
+    Client side:
+
+
+
+
+
+
+
+    GUI side:
+
+            # 1 import tkinter module other necessary methods
+        from tkinter import *
+        from tkinter import ttk 
+        from tkinter.ttk import *
+
+            # 2 Creating the instance 
+
+        root = Tk()
+        root.title('C-ተወያይ-hat!') 
+        root.geometry('315x500')
+        root.resizable('False','False')
+
+            # 3 The clients name to be displayed on every clients instance
+        name = 'Client's name Placement'
+
+
+        labelHead = ttk.Label( root,background="#17202A",foreground="#EAECEE",text=name)
+        labelHead.pack(side=TOP, anchor=NE)
+
+        line = Label(root, width=450, background="#17202A")
+        line.place(relwidth=1, rely=0.032, relheight=0.002)
+            
+            # 4 Chat area to be displayed 
+
+        textCons = Text(root,width=20,bg="white",font=("aril", 10),padx=5,pady=5)
+        textCons.place(x=0,y=20,relwidth=1, relheight=0.87)  
+
+        lineBottom = Label(root, background="#17202A")
+        lineBottom.place(relwidth=1, rely=0.9, relheight=0.002)
+
+                # create a scroll bar
+        textCons.config(cursor="arrow") # to change the cursor to an arrow
+        scrollbar = Scrollbar(textCons) # the range of the scroll bar is just the text area
+
+            # place the scroll bar into the gui root
+
+        scrollbar.place(relheight=1,relx=0.974)
+        scrollbar.config(command=textCons.yview)
+        textCons.config(state=DISABLED) # the text area is only for reading so it needs to be disabled 
+
+            # 5 start the instance
+        root.mainloop()

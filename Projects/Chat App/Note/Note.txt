@@ -1,0 +1,75 @@
+What are:
+    Local Networks: 
+        A local area network is a computer network that 
+        interconnects computers within a limited area
+    Networks:
+        Collection of computers, servers, mainframes, network devices, 
+        peripherals, or other devices connected to allow data sharing. 
+        An example of a network is the Internet, which connects millions of 
+        people all over the world.
+    Connections:
+        The extensive process of connecting various parts of a network to one another
+    How does the internet work?:
+        1. Whats is the internet infrastructure?
+        The internet is a network of cables that facilitates the transmission of "Data Packets"
+
+        2. What are Data packets?
+            contains the information being transmitted over the network. They also contain information 
+            about the sender and recipient.
+
+                    Eg.
+                            Data Packet
+                        
+                        Header:
+                            Senders ip
+                            receivers ip
+                            protocol
+                            packet number
+                        Payload:
+                            Data
+                        Trailer:
+                            Data to show end of packet
+                            Error correction
+
+        3. Ip Address
+            Is a string of numbers separated by periods they define the address of the device.
+        4. Bandwidth 
+            Is the speed ata which data packets can be transmitted and its measured by "Bitrate".
+                Bitrate - number bits per second a network can transmit.
+                Latency - Amount of time it takes for 1 bit to be sent from the sender to the receiver
+        5. Protocol
+            IP (internet protocol) - route info to the proper address
+            TCP protocol - Facilitates the transmission of data packets Ensure that no information is missing 
+            HTTP protocol 
+            HTTPS protocol - More secure than HTTP
+                                - Data packets are encrypted using SSL(secure socket layer) or TLS(transport security layer)
+            SMTP protocol - Simple mail transfer protocol
+                            Two types of mail delivery
+                                Local domain
+                                outbound domain
+        6. Web Server 
+            A computer that hosts a website or web applications.
+                Configured to accept remote connections with internet users and relay data through HTTP/HTTPS
+
+        7. Security Certificate
+            Requires installation on the web server and can be purchased from a reputable vendor 
+            (EV[Extended validation] certificates offer the highest level of security) 
+
+
+
+        NOTE: Network basics - LAN and WAN
+
+            LAN (Local Area Network)
+                A group of computers that share a common communication line within a relatively small area.
+                typically confined to a single room, building or group of buildings 
+            WAN (Wide Area Network)
+                A more complex network that spans across much larger geographical areas such as cities, states and nations.
+                The internet is the largest WAN in existence
+
+            Network Ports
+                This is like a data pipe line that can Configured on your router based different protocols.
+            
+            Firewalls
+                Is a system designed to prevent unauthorized access to or from the network.
+                        Hardware -> on the routers 
+                        Software -> on the Development 
