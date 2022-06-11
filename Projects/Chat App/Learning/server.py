@@ -45,7 +45,7 @@ def handle(conn, addr):
 
 def broadcastMessage(message):
     for client in clients:
-        client.send(f'{message}')
+        client.send(message)
 
 
 startServer()

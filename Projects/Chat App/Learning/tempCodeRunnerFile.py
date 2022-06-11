@@ -1,1 +1,1 @@
-CONNECT
+socket.gethostbyname(socket.gethostname())

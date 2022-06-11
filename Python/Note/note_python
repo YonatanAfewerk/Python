@@ -1358,4 +1358,4 @@
 
 pip install pyinstaller
 
-pyinstaller --windowed --onefile --icon="pdf.png" main.py
+pyinstaller --windowed --onefile --icon="pdf.ico" main.py

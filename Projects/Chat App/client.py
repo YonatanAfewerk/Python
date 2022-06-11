@@ -4,6 +4,7 @@ import threading
 from tkinter import *
 from tkinter import font
 from tkinter import ttk
+from PIL import Image, ImageTk
 
 
 PORT = 5050
@@ -31,25 +32,42 @@ class GUI:
 		# login window
 		self.login = Toplevel()
 		# set the title
-		self.login.title("Login")
+		self.login.title("C-ተወያይ-hat")
 		self.login.resizable('False','False')
-		self.login.geometry('300x200')
+		self.login.geometry('300x450')
 		self.login.configure(bg='White')
+  
+		self.photo_ = PhotoImage(file = "message.png")
+		self.Window.iconphoto(False, self.photo_)
+		self.login.iconphoto(False, self.photo_)
+		
+		self.photo = PhotoImage(file = "Main Logo.png")
+		self.logo = ttk.Label(self.login, 
+                           image=self.photo,
+                           background='white').place(x=65,y=25)
+
 		# create a Label
 		self.pls = ttk.Label(self.login, 
-                           text='Please Enter Your Name',
-                           background='white', 
-                           justify=CENTER).place(x=90,y=25)
-
-
-
+                           text='Enter Your Name',
+                           background='white').place(x=105,y=250)
+  
+		self.fun = ttk.Label(self.login, 
+                           text='መልእክተኛ ኃ.የተ.የግ.ማ © 2014',
+                           font=('aril',7),
+                           background='white').place(x=160,y=430)
+  
+		self.fun_ = ttk.Label(self.login, 
+                           text='MessengerPlc@gmail.com',
+                           font=('aril',7),
+                           background='white').place(x=10,y=430)
+  
 		# create a entry box for
 		# typing the message
 		self.entryName = ttk.Entry(self.login, 
                            width = 25,
                            font = ('arial', 10))
 
-		self.entryName.place(x=65,y=60)
+		self.entryName.place(x=65,y=280)
 
 		# set the focus of the cursor
 		self.entryName.focus()
@@ -58,7 +76,7 @@ class GUI:
 		# along with action
 		self.go = ttk.Button(self.login, text='Continue', command=lambda: self.goAhead(self.entryName.get()))
 
-		self.go.place(x=115, y=100)
+		self.go.place(x=115, y=310)
   
 		self.Window.mainloop()
 
@@ -154,7 +172,7 @@ class GUI:
 				if message == 'NAME':
 					client.send(self.name.encode(FORMAT))
 				else:
-					# insert messages to text box
+					# insert messages to text box (cause we already set the state to DISABLED we need to set it to NORMAL before we insert data)
 					self.textCons.config(state=NORMAL)
 					self.textCons.insert(END,
 										message+"\n")
