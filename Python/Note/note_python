@@ -1237,7 +1237,7 @@
 
 # API (Applications programming interface)
 
-# Socket Programming       
+# Socket Programming
 
     CREATING the SERVER 
         import socket
@@ -1324,6 +1324,99 @@
             send('Hello, world!')
             send(DISCONNECT_MESSAGE) # to stop the connection   
 
+# SQLite Database
+
+    Tip: is u don't add your own id there is a default id called ( rowid )
+
+        DATA Types in sqlite3 
+            NULL. The value is a NULL value.
+            INTEGER. The value is a signed integer, stored in 0, 1, 2, 3, 4, 6, or 8 bytes depending on the magnitude of the value.
+            REAL. The value is a floating point value, stored as an 8-byte IEEE floating point number.
+            TEXT. The value is a text string, stored using the database encoding (UTF-8, UTF-16BE or UTF-16LE).
+            BLOB. The value is a blob of data, stored exactly as it was input.
+
+    import sqlite3
+    import sys
+    from tabulate import tabulate
+
+        # connect to a db before even existing
+    connect = sqlite3.connect('new_database.db')
+        # create a cursor for the database 
+    c = connect.cursor()
+
+        
+        # creating a table 
+    c.execute('''
+        CREATE TABLE students 
+        (
+            id_no INT,
+            first_name text,
+            last_name text,
+            depar text
+        )''')
+        # commit the changes 
+    connect.commit()
+
+    c.execute('''
+        CREATE TABLE teachers 
+        (
+            id_no INT,
+            first_name text,
+            last_name text,
+            depar text
+        )''')
+        # commit the changes 
+    connect.commit()
+    c.execute('''
+        CREATE TABLE dep 
+        (
+            dep_id int,
+            depar_name text,
+            center text,
+            status text
+        )''')
+        # commit the changes 
+    connect.commit()
+
+        # how to get the data in the database tables 
+    c.execute('''
+        SELECT * 
+        FROM students
+        ORDER BY first_name asc''')
+
+    table = c.fetchall()
+
+    print(tabulate(table,tablefmt='grid'))
+
+    or using loop 
+
+    for line in table:
+        print(line)
+
+
+        # make sure to close the connection 
+    connect.close()
+
+
+            # insert Multiple  
+
+        product_list = [
+            (9,'Neutrogena cleanser','Hydro boost','Cleanser','Available',1299.9),
+            (10,"Fila women's vulc 13 mp",'Fila','sneakers size 38','Available',2899.9),
+            (11,'EXTRA chewing gum','EXTRA','chewing gum 35 stick','Available',499.9),
+            (12,'Mac lipstick','Mac','Lipstick','Available',2899.9),
+            (13,'Neutrogena cleanser','Hydro boost','Cleanser','Available',1299.9),
+            (14,"Fila women's vulc 13 mp",'Fila','sneakers size 38','Available',2899.9),
+            (15,'EXTRA chewing gum','EXTRA','chewing gum 35 stick','Available',499.9),
+            (16,'Mac lipstick','Mac','Lipstick','Available',2899.9),
+            ]
+
+        c.executemany("""
+                INSERT INTO product(pro_id,Pro_name,pro_brand,pro_type,status,pro_price) 
+                VALUES (?,?,?,?,?,?)""",product_list)
+
+        conn.commit()
+
 
 
 📘 Intermediate Python 📘
@@ -1354,8 +1447,8 @@
 
 
 
-# How to make a program into an app
+# How to make a python program into an application 
 
-pip install pyinstaller
+    pip install pyinstaller
 
-pyinstaller --windowed --onefile --icon="pdf.ico" main.py
+    pyinstaller --windowed --onefile --icon="pdf.ico" main.py

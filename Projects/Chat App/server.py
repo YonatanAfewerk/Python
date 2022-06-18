@@ -73,7 +73,7 @@ def startChat():
 
 		# no. of clients connected
 		# to the server
-		print(f"active connections {threading.activeCount()-1}")
+		print(f"active connections {threading.active_count()-1}")
 
 # method to handle the
 # incoming messages

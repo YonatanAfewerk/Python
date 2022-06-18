@@ -2,10 +2,9 @@
 import socket
 import threading
 from tkinter import *
-from tkinter import font
-from tkinter import ttk
-from PIL import Image, ImageTk
+from tkinter import font, ttk
 
+from PIL import Image, ImageTk
 
 PORT = 5050
 SERVER = "192.168.1.103"
@@ -14,9 +13,9 @@ FORMAT = "utf-8"
 	
 # Create a new client socket
 # and connect to the server
-client = socket.socket(socket.AF_INET,
-					socket.SOCK_STREAM)
-client.connect(ADDRESS)
+# client = socket.socket(socket.AF_INET,
+# 					socket.SOCK_STREAM)
+# client.connect(ADDRESS)
 
 
 # GUI class for the chat
