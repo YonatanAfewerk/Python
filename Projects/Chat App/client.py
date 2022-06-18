@@ -2,10 +2,9 @@
 import socket
 import threading
 from tkinter import *
-from tkinter import font
-from tkinter import ttk
-from PIL import Image, ImageTk
+from tkinter import font, ttk
 
+from PIL import Image, ImageTk
 
 PORT = 5050
 SERVER = "192.168.1.103"
@@ -52,9 +51,9 @@ class GUI:
                            background='white').place(x=105,y=250)
   
 		self.fun = ttk.Label(self.login, 
-                           text='መልእክተኛ ኃ.የተ.የግ.ማ © 2014',
+                           text='Copyright © 2014 መልእክተኛ ኃ.የተ.የግ.ማ ',
                            font=('aril',7),
-                           background='white').place(x=160,y=430)
+                           background='white').place(x=130,y=430)
   
 		self.fun_ = ttk.Label(self.login, 
                            text='MessengerPlc@gmail.com',
