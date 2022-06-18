@@ -1327,7 +1327,7 @@
 # SQLite Database
 
     Tip: is u don't add your own id there is a default id called ( rowid )
-
+    Test
         DATA Types in sqlite3 
             NULL. The value is a NULL value.
             INTEGER. The value is a signed integer, stored in 0, 1, 2, 3, 4, 6, or 8 bytes depending on the magnitude of the value.
