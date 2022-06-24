@@ -1248,6 +1248,7 @@
 # API (Applications programming interface)
 
 # Socket Programming
+    tip 127.0.0.1
 
     CREATING the SERVER 
         import socket

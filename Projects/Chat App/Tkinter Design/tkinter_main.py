@@ -18,7 +18,6 @@ name = "Client's Name goes Here..."
     # to show chat root
 root.title("C-ተወያይ-hat!")  
 root.geometry("315x550")  
-root.resizable('False','False')  
 root.configure(bg='white')
   
   

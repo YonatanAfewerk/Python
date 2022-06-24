@@ -168,7 +168,7 @@ class GUI:
 				message = client.recv(1024).decode(FORMAT)
 
 				# if the messages from the server is NAME send the client's name
-				if message == 'NAME':
+				if message == 'Key':
 					client.send(self.name.encode(FORMAT))
 				else:
 					# insert messages to text box (cause we already set the state to DISABLED we need to set it to NORMAL before we insert data)

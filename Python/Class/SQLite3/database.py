@@ -5,9 +5,6 @@ conn = sqlite3.connect("Daisy's thrift shop-Inventory-Management.db")
 c = conn.cursor()
 
 def show_all_products():
-    
- 
-    
         # get data from the tables 
     c.execute(""" 
         SELECT *
@@ -15,6 +12,8 @@ def show_all_products():
     """)
 
     table = c.fetchall()
+
+    print( tabulate(table,tablefmt='grid'))
 
     return tabulate(table,tablefmt='grid')
 
@@ -29,3 +28,6 @@ def add_to_product(product_list):
     conn.close()
 
     return f'Added Data! {c.rowcount} rows affected'
+
+
+show_all_products()

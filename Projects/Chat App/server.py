@@ -11,7 +11,7 @@ PORT = 5050
 # for the server.
 SERVER = socket.gethostbyname(socket.gethostname())
 
-# Address is stored as a tuple
+# Address is stored as a tuple-
 ADDRESS = (SERVER, PORT)
 
 # the format in which encoding
@@ -48,7 +48,7 @@ def startChat():
 		# a new connection to the client
 		# and the address bound to it
 		conn, addr = server.accept()
-		conn.send("NAME".encode(FORMAT))
+		conn.send("Key".encode(FORMAT))
 
 		# 1024 represents the max amount
 		# of data that can be received (bytes)
@@ -86,13 +86,14 @@ def handle(conn, addr):
 
 	while connected:
 		# receive message
-		message = conn.recv(1024)
+		try:
+			message = conn.recv(1024)
 
-		# broadcast message
-		broadcastMessage(message)
-
-	# close the connection
-	conn.close()
+			# broadcast message
+			broadcastMessage(message)
+		except:
+			# close the connection
+			conn.close()
 
 # method for broadcasting
 # messages to the each clients

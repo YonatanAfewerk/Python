@@ -1,1 +1,0 @@
-socket.gethostbyname(socket.gethostname())
