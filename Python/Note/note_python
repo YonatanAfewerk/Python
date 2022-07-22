@@ -1354,8 +1354,8 @@
 
 
 
-# How to make a program into an app
+# How to make a python program into an application 
 
-pip install pyinstaller
+    pip install pyinstaller
 
-pyinstaller --windowed --onefile --icon="pdf.ico" main.py
+    pyinstaller --windowed --onefile --icon="pdf.ico" main.py

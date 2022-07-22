@@ -2,10 +2,9 @@
 import socket
 import threading
 from tkinter import *
-from tkinter import font
-from tkinter import ttk
-from PIL import Image, ImageTk
+from tkinter import font, ttk
 
+from PIL import Image, ImageTk
 
 PORT = 5050
 SERVER = "192.168.1.103"
